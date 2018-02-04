@@ -1,0 +1,12 @@
+describe("concatenate", function()
+    require("tabcat")
+
+  it("returns both array arguments as a single array", function()
+    assert.are_same({"f", "o", "o", "b", "a", "r"}, concatenate({"f", "o", "o"}, {"b", "a", "r"}))
+    assert.are_same({"f", "o", "o"}, concatenate({"f", "o", "o"}, {}))
+    assert.are_same({"f", "o", "o"}, concatenate({"f", "o", "o"}, nil))
+    assert.are_same({"b", "a", "r"}, concatenate({}, {"b", "a", "r"}))
+    assert.are_same({"b", "a", "r"}, concatenate(nil, {"b", "a", "r"}))
+    assert.are_same({}, concatenate(nil, nil))
+    end)
+end)
